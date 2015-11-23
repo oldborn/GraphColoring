@@ -1,0 +1,12 @@
+[main]
+
+problem = gc
+
+files =
+    main.py
+    REPORT.txt
+
+build =
+
+run =
+    python main.py %%f
