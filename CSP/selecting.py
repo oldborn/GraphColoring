@@ -1,4 +1,5 @@
-def pick_var(assignment, csp):
+import random
+def pick_var(assignment, csp, method):
     indexes = [x for x in range(assignment.__len__()) if assignment[x] == -1]
     # todo more advanced
     # this part is most neighbored node -> better than random
@@ -12,11 +13,18 @@ def pick_var(assignment, csp):
     #     return random.choice(indexes)
 
     # let's try minimum domain -> it gave 20 from 5th instance 14 from others
-    if indexes.__len__() > 0:
-            min_domain = [csp[i].domain.__len__() for i in indexes]
-            index_of_min = min_domain.index(min(min_domain))
-            return indexes[index_of_min]
-
+    # if indexes.__len__() > 0:
+    #         min_domain = [csp[i].domain.__len__() for i in indexes]
+    #         index_of_min = min_domain.index(min(min_domain))
+    #         return indexes[index_of_min]
+    if method == 0:
+        return pick_var_RD(assignment, csp)
+    elif method == 1:
+        return pick_var_minimum_domain_max_restrict(assignment, csp)
+    elif method == 2:
+        return minimum_domain(assignment, csp)
+    elif method == 3:
+        return random_select(assignment, csp)
 
     return None
 
@@ -49,3 +57,17 @@ def pick_var_minimum_domain_max_restrict(assignment, csp):
 
     return None
 
+def minimum_domain(assignment, csp):
+    indexes = [x for x in range(assignment.__len__()) if assignment[x] == -1]
+    if indexes.__len__() > 0:
+            min_domain = [csp[i].domain.__len__() for i in indexes]
+            index_of_min = min_domain.index(min(min_domain))
+            return indexes[index_of_min]
+    return None
+
+def random_select(assignment,csp):
+    indexes = [x for x in range(assignment.__len__()) if assignment[x] == -1]
+    # random selection bad results
+    if indexes.__len__() > 0:
+        return random.choice(indexes)
+    return None

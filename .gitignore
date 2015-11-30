@@ -47,3 +47,17 @@ CSP/__pycache__/doCSP.cpython-35.pyc
 CSP/__pycache__/operations.cpython-35.pyc
 
 CSP/__pycache__/selecting.cpython-35.pyc
+
+geneticalgorithm/selection/__pycache__/tournament.cpython-35.pyc
+
+geneticalgorithm/selection/__pycache__/__init__.cpython-35.pyc
+
+geneticalgorithm/__pycache__/__init__.cpython-35.pyc
+
+geneticalgorithm/__pycache__/doGA.cpython-35.pyc
+
+geneticalgorithm/__pycache__/operations.cpython-35.pyc
+
+geneticalgorithm/crossover/__pycache__/__init__.cpython-35.pyc
+
+geneticalgorithm/crossover/__pycache__/union.cpython-35.pyc
