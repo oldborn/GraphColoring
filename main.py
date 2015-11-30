@@ -11,9 +11,7 @@ sys.setrecursionlimit(100000)
 
 
 random.seed(12345678901)
-# nodes = read.read_problem(sys.argv[1])
 nodes = read.read_problem("data/gc_4_1")
-# doGA.doGA(nodes)
 doCSP.backtrack_search(nodes)
 
 
